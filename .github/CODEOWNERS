@@ -1,0 +1,6 @@
+# Default owner for everything in the repo
+* @iokeke-cos
+
+# Specific folder or file owners (later lines override earlier ones)
+/backend/ @iokeke-cos
+/.github/CODEOWNERS @iokeke-cos
