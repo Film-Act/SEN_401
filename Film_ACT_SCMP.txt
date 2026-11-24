@@ -1,0 +1,178 @@
+=====================================================================
+SOFTWARE CONFIGURATION MANAGEMENT PLAN (SCMP)
+Project: Fim_ACT App
+Course: SEN 401
+Group: G
+Version: 0.1 
+Date: 10-11-2026
+=====================================================================
+
+1. INTRODUCTION
+---------------------------------------------------------------------
+1.1 Purpose
+This plan explains how we will identify, control, track and check every
+item that makes up the Fim_ACT App, so that everyone on the team
+always knows which version is current, who changed it, and why.
+
+1.2 Scope
+- Product: the Fim_ACT App, an online collaboration platform that
+  connects actors and filmmakers, helping local filmmakers discover and
+  collaborate with casting talent from their communities (source code,
+  documentation, tests and configuration files).
+- Life-cycle phases: requirements, design, development, testing and
+  release.
+- Team: the six members listed in Section 2
+- Environments: development, testing and production (see Section 4).
+- Tools covered: the Git repository and the other tools in Section 4.
+Anything outside this list (for example, personal notes) is not under
+configuration control.
+
+1.3 Key Definitions
+- Configuration Item (CI): any file or document we place under control.
+- Baseline: an approved version of one or more CIs. After approval it
+  can change only through the change control process.
+- Change Request (CR): a written request to change a baselined CI.
+- CCB (Change Control Board): the group that approves or rejects CRs.
+- SCMP: this document which outlines the procedures, tools, and responsibilities for managing this projects     configurations.
+- Repository: the shared place where all CIs and their history live.
+- Branch: a separate line of work inside the repository.
+- Pull Request (PR): a request to merge a branch into another branch.
+
+
+2. SCM MANAGEMENT
+---------------------------------------------------------------------
+2.1 Organisation
+The project is run by one team of six members. Okeke Ijeamaka is the
+team lead, while the other five members contribute as project members.
+Configuration management duties are shared as set out in 2.2.
+
+2.2 Roles and Responsibilities
+
+  Name                    | Role                      | Responsibilities
+  ------------------------|---------------------------|---------------------------
+  Okeke Ijeamaka          | Team Lead                 | Guide team members, coordinate project work, manage the configuration process, and monitor pull requests
+  Russell Obasuyi         | Project Member            | Contribute to project work, review changes, and submit pull requests
+  Iheanyichukwu Ibekwe    | Project Member            | Contribute to project work, review changes, and submit pull requests
+  Flourish Sannitops      | Project Member            | Contribute to project work, review changes, and submit pull requests
+  Kemji Ezenwoko          | Project Member            | Contribute to project work, review changes, and submit pull requests
+  Favour Akinbobola       | Project Member            | Contribute to project work, review changes, and submit pull requests
+
+  Configuration Manager: Okeke Ijeamaka (Team Lead)
+  CCB members: All six project members, chaired by Okeke Ijeamaka.
+
+2.3 Applicable Policies
+- The SEN 401 course requirements and the policies of Pan-Atlantic
+  University.
+- The rules in this plan. If the plan and a course rule disagree, the
+  course rule wins.
+
+
+3. SCM ACTIVITIES
+---------------------------------------------------------------------
+3.1 Configuration Identification
+Configuration items:
+- Requirements document and user stories
+- Design documents (architecture, database design, screen designs)
+- Source code (frontend, backend, database scripts)
+- Test cases and test results
+- Configuration files (build settings, environment settings)
+- User guide and release notes
+
+Naming and versioning:
+- Files use clear lowercase names, e.g. cast-profile-service.js.
+- Releases use MAJOR.MINOR.PATCH (e.g. 1.0.0). A new feature raises
+  MINOR; a bug fix raises PATCH.
+
+Baselines:
+- B1 Requirements baseline: requirements document approved.
+- B2 Design baseline: design documents approved.
+- B3 Release candidate baseline: code complete and tested.
+- B4 Final release baseline: version 1.0.0 submitted.
+
+3.2 Configuration Control (Change Management)
+1. Anyone who wants a change to a baselined item opens a Change
+   Request (an issue in the repository) stating what, why and impact.
+2. The CCB reviews open CRs at its weekly meeting and records the
+   decision: approved, rejected or deferred.
+3. Approved changes are made on a separate branch, never directly on
+   main.
+4. Every merge into main needs a pull request and at least one
+   approval from a team member who did not write the change.
+5. Urgent bug fixes may be merged after one approval, and the CCB is
+   told at its next meeting.
+
+3.3 Configuration Status Accounting
+Each week the team records: the current version of each baseline, the
+open, approved and closed CRs, and the latest commits per branch. The
+repository history and issue tracker are the source for this report.
+
+3.4 Audits and Reviews
+- Functional audit: before B3 and B4, check that the app does what
+  the requirements say.
+- Physical audit: before B3 and B4, check that the repository matches
+  the documents (right files, right versions, nothing missing).
+- Code review: done through pull requests, as in 3.2.
+Findings are logged and fixed before the baseline is approved.
+
+
+4. TOOLS, TECHNIQUES AND ENVIRONMENT
+---------------------------------------------------------------------
+4.1 Tools
+- Version control: Git, hosted on GitHub.
+- Change requests and tracking: GitHub Issues.
+- Automated checks: GitHub Actions runs the tests on every pull
+  request.
+- Documents: shared folder, with final versions also committed to the
+  repository.
+
+4.2 Environments
+- Development: each member's own computer.
+- Testing: a shared test setup used to check builds before release.
+- Production: the final running version of the app.
+
+4.3 SCM Schedule
+  Milestone                         | Date
+  ----------------------------------|----------------
+  B1 Requirements baseline          | To be determined
+  B2 Design baseline                | To be determined
+  B3 Release candidate + audits     | To be determined
+  B4 Final release + audits         | To be determined
+  Weekly CCB meeting                | Every Week
+
+
+5. SUPPLIER / SUBCONTRACTOR CONTROL
+---------------------------------------------------------------------
+Outside components (libraries, packages, frameworks, hosting and API
+services) are treated as configuration items.
+- Before adding one, the CCB approves it, after checking that it is
+  maintained, secure and has a licence we can use.
+- Versions are fixed in the dependency file and its lock file, so
+  builds are repeatable. Updates go through a change request.
+- Each outside component is listed with its name, version, source and
+  purpose.
+
+
+6. RECORDS COLLECTION AND RETENTION
+---------------------------------------------------------------------
+  Record                            | Kept in             | Kept for
+  ----------------------------------|---------------------|-----------
+  Source code and full history      | Git repository      | Management
+  Baselines (B1 to B4)              | Tagged in Git       | Management
+  Change requests and decisions     | GitHub Issues       | Management
+  CCB meeting notes                 | Shared folder       | Management
+  Audit and review reports          | Shared folder       | Management
+  Weekly status reports             | Shared folder       | Management
+
+Baselines are tagged in Git at approval so they can always be
+recovered. The repository is backed up to a second location.
+
+
+7. PLAN MAINTENANCE
+---------------------------------------------------------------------
+This plan is a living document. It is reviewed at the start of each
+baseline period and updated through the same change control process
+used for other items.
+
+=====================================================================
+END OF DOCUMENT
+=====================================================================
