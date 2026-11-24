@@ -1,8 +1,8 @@
 =====================================================================
 SOFTWARE CONFIGURATION MANAGEMENT PLAN (SCMP)
-Project: Fim_ACT App
+Project: Film_ACT App
 Course: SEN 401
-Group: G
+Group: C
 Version: 0.1 
 Date: 10-11-2026
 =====================================================================
@@ -11,11 +11,11 @@ Date: 10-11-2026
 ---------------------------------------------------------------------
 1.1 Purpose
 This plan explains how we will identify, control, track and check every
-item that makes up the Fim_ACT App, so that everyone on the team
+item that makes up the Film_ACT App, so that everyone on the team
 always knows which version is current, who changed it, and why.
 
 1.2 Scope
-- Product: the Fim_ACT App, an online collaboration platform that
+- Product: the Film_ACT App, an online collaboration platform that
   connects actors and filmmakers, helping local filmmakers discover and
   collaborate with casting talent from their communities (source code,
   documentation, tests and configuration files).
