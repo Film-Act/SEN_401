@@ -1,0 +1,4 @@
+import { ArrowUpRight, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import type { Actor } from '../types'
+export default function ActorCard({ actor }: { actor: Actor }) { return <article className="actor-card"><Link to={`/actors/${actor.id}`} className="actor-image-link"><img className="actor-image" src={actor.image} alt={actor.name} /><span className="image-arrow"><ArrowUpRight size={17} /></span></Link><div className="actor-card-body"><div className="actor-card-heading"><div><Link to={`/actors/${actor.id}`} className="actor-name">{actor.name}</Link><p className="muted small-text">{actor.role}</p></div><span className="online-dot" title="Open to opportunities" /></div><p className="location-line"><MapPin size={14} /> {actor.location}</p><div className="tag-list">{actor.skills.slice(0, 3).map(skill => <span className="tag" key={skill}>{skill}</span>)}</div></div></article> }
